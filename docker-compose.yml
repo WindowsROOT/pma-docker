@@ -1,0 +1,16 @@
+version: '3'
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: 'php7.3-phpmyadmin'
+    restart: always
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOSTS: ''
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 3000M
+      MAX_EXECUTION_TIME: 3600
+    ports:
+      - '191:80'
+    volumes:
+      - /sessions
